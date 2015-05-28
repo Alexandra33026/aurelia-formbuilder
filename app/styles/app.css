@@ -1,0 +1,261 @@
+html, body{
+	height: 100%;
+	overflow-y: hidden;
+}
+[class$="-collapse"] > .column{
+	padding-left: 0;
+	padding-right: 0;
+}
+[draggable="true"]:hover,
+[draggable="true"] label:hover,
+[draggable="true"] select:hover,
+[draggable="true"] textarea:hover,
+[draggable="true"] input:hover{
+	cursor: -webkit-grab !important;
+	cursor: -moz-grab !important;
+}
+fieldset legend {
+	background: transparent;
+}
+.top-bar{
+	background-color:#2c3e50;
+}
+.splash {
+	left:50%;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 200px;
+	text-align: center;
+}
+.top-bar-section ul li,
+.top-bar-section ul li.has-form {
+	background-color: #2c3e50;
+}
+.top-bar-section ul li > span{
+	display: block;
+	width: 100%;
+	color: #FFF;
+	padding: 0px 0.9375rem;
+	line-height: 2.8125rem;
+	font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+	font-size: 0.8125rem;
+	font-weight: normal;
+	text-transform: none;
+}
+.formbuilder-nav .has-form > .button {
+	width:115px;
+}
+.last-saved-text{
+	width: 185px;
+	text-align: center;
+	min-height: 1px;
+}
+.fluid-row {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.page-host{
+	position: absolute;
+	top:45px;
+	bottom:65px;
+	width:100%;
+	overflow: hidden;
+}
+.form-preview-panel{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0.9735rem;
+	width: 100%;
+}
+@media screen and (min-width: 1200px){
+	.form-preview-panel{
+		width: calc(100% - 400px);
+	}
+}
+.form-preview{
+	height: 100%;
+}
+.form-preview.empty{
+	background-color:#ecf0f1;
+	border:3px dashed #7f8c8d;
+	border-radius: 3px;
+}
+.empty-form-hint{
+	display: block;
+	position: absolute;
+	font-size: 2rem;
+	color: #7f8c8d;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.form-toolbox-panel{
+	background-color:#ecf0f1;
+	border-left: 1px solid #ccc;
+	top:0;
+	bottom: 0;
+	position: absolute;
+	transform: translateX(100%);
+	right: 0;
+	width: 400px;
+}
+.form-toolbox-panel.closed{
+	-webkit-animation: slideToolBoxOut 1s ease-in-out;
+	-moz-animation: slideToolBoxOut 1s ease-in-out;
+  	animation: slideToolBoxOut 1s ease-in-out;
+  	transform: translateX(100%);
+}
+.form-toolbox-panel.open{
+	-webkit-animation: slideToolBoxIn 1s ease-in-out;
+	-moz-animation: slideToolBoxIn 1s ease-in-out;
+  	animation: slideToolBoxIn 1s ease-in-out;
+  	transform: none;
+  	box-shadow: 2px 0 15px 1px rgba(0,0,0,.3);
+}
+@media screen and (min-width: 1200px){
+	.form-toolbox-panel,
+	.form-toolbox-panel.open,
+	.form-toolbox-panel.closed{
+		transform: none;
+	}
+	.toolbox-trigger{
+		display: none;
+	}
+}
+.toolbox {
+	padding: 1rem 2rem;
+}
+.toolbox > h1:first-child {
+	color: #555;
+	text-align: center;
+	font-size: 1.5rem;
+	padding: 0 2rem 0.5rem;
+	margin-left: -2rem;
+	margin-right: -2rem;
+	margin-top:-0.5rem;
+	position: relative;
+}
+.toolbox-trigger,
+.toolbox-trigger:focus {
+	position: absolute;
+	left: -59px;
+	top: 3rem;
+	background-color: #2980b9;
+	border: 1px solid #CCC;
+	padding: 0px !important;
+	height: 59px;
+	width: 59px;
+	border-right: 0;
+	color: #fff;
+	font-size: 1.5rem;
+	margin: 0;
+	border-bottom-left-radius: 3px;
+	outline: none;
+	box-shadow: -3px 0 10px -3px rgba(0,0,0,.3)
+}
+.toolbox-trigger.open,
+.toolbox-trigger.open:focus,
+.toolbox-trigger:hover{
+	background-color: #ecf0f1;
+	color:#2980b9;
+	outline: none;
+}
+.toolbox select {
+	-moz-appearance: none;
+}
+
+.form-settings-panel{
+	margin-bottom: 2rem;
+}
+
+footer-bar{
+	background-color:#fcfcfc;
+	border-top: 1px solid #95a5a6;
+	position: fixed;
+	bottom:0;
+	width: 100%;
+}
+footer-bar .button {
+	margin: 10px 20px;
+}
+footer-bar .button + .button {
+	margin-right:0;
+}
+
+
+button, .button,
+.top-bar-section ul li>a.button{
+	background-color:#2980b9;
+	border: 0;
+}
+
+button:hover, .button:hover,
+.top-bar-section ul li>a.button:hover{
+	background-color:#1067A0;
+}
+
+button.success, .button.success{
+	background-color:#2ecc71;
+}
+button.success:hover, .button.sucess:hover{
+	background-color:#15B358;
+}
+
+/*
+*
+* ANIMATION KEYFRAMES 
+*
+*/
+@-webkit-keyframes slideToolBoxIn {
+	0% {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+	}	
+}
+@keyframes slideToolBoxIn{
+	0% {
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+	100% {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+}
+@-webkit-keyframes slideToolBoxOut {
+	0% {
+		-webkit-transform: none;
+		transform: none;
+	}
+	100% {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+}
+@keyframes slideToolBoxOut{
+	0% {
+		-webkit-transform: none;
+		-moz-transform: none;
+		-ms-transform: none;
+		transform: none;
+	}
+	100% {
+		-webkit-transform: translateX(100%);
+		-moz-transform: translateX(100%);
+		-ms-transform: translateX(100%);
+		transform: translateX(100%);
+	}
+}

@@ -1,0 +1,15 @@
+<template>
+    <div class="form-preview-panel">
+        <div class="form-preview empty">
+            <span class="empty-form-hint">Drop Form Elements Here</span>
+        </div>
+    </div>
+    <div class="form-toolbox-panel">
+        <button click.trigger="toggleToolbox()" class="toolbox-trigger"><i class="fa fa-bars"></i></button>
+        <div class="toolbox">
+            <h1>Form Toolbox</h1>
+            <require from="./form-toolbox"></require>
+            <form-toolbox></form-toolbox>
+        </div>
+    </div>
+</template>

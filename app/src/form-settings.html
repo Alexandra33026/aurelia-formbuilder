@@ -1,0 +1,79 @@
+<template>
+	<div class="form-settings-panel au-animate">
+		<div class="row">
+			<div class="column small-12">
+				<h1>Form Settings</h1>
+				<label>Form Name
+					<input type="text" name="formName" value.bind="form.name"/>
+				</label>
+				<label>Form Type
+					<select name="formType" value.bind="form.type">
+						<option value=""></option>
+						<option value="email">E-mail</option>
+						<option value="database">Database</option>
+					</select>
+				</label>
+				<div class="email-options" if.bind="form.type === 'email'">
+					<label>Email To
+						<input type="text" name="txtEmailTo" value.bind="form.emailTo"/>
+					</label>
+					<label>Email Suject
+						<input type="text" name="txtEmailSubject" value.bind="form.emailSubject"/>
+					</label>
+					<label>Submission Action
+						<select name="submissionAction" value.bind="form.submissionAction">
+							<option value="standard">Standard E-mail Submission</option>
+							<option value="custom">Custom E-mail Submission</option>
+						</select>
+					</label>
+					<label if.bind="submissionAction === 'custom'">Submit Page URL
+						<input type="text" name="txtSubmitPage" value.bind="form.submitPage"/>
+					</label>
+					<label>Thank You Page URL
+						<input type="text" name="txtRedirectPage" value.bind="form.redirectUrl"/>
+					</label>
+				</div>
+				<div class="database-options" if.bind="form.type === 'database'">
+					<label>Database Connection String
+						<input type="text" name="txtDatabaseConnectionString"/>
+					</label>
+				</div>
+				<h2>Form Display Settings</h2>
+				<label>Number of Columns
+					<select name="columnCount" value.bind="form.displaySettings.columnCount">
+						<option value="1">1 column</option>
+						<option value="2">2 columns</option>
+					</select>
+				</label>
+				<label>Question Alignment
+					<select name="questionAlignment" value.bind="form.displaySettings.questionAlign">
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+					</select>
+				</label>
+				<label>Answer Alignment
+					<select name="answerAlignment" value.bind="form.displaySettings.answerAlign">
+						<option value="left">Left</option>
+						<option value="center">Center</option>
+						<option value="right">Right</option>
+					</select>
+				</label>
+				<label>Form Display
+					<select name="formDisplay" value.bind="form.displaySettings.displayType">
+						<option value="responsive">Responsive</option>
+						<option value="tables">Non-responsive</option>
+					</select>
+				</label>
+				<label>Output Style
+					<select name="outputStyle" value.bind="form.displaySettings.output">
+						<option value="html">HTML</option>
+						<option disabled value="xml">XML</option>
+						<option disabled value="excel">Excel</option>
+						<option disabled value="user">Display to User</option>
+					</select>
+				</label>
+			</div>
+		</div>
+	</div>
+</template>

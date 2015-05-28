@@ -1,0 +1,5 @@
+<template> 
+	<div draggable="true" class="ui-draggable" repeat.for="item of items" dragstart.trigger="$parent.alertIndex($index)">
+		<compose view="formWidgets/${item.type}.html"></compose>
+	</div>
+</template> 
