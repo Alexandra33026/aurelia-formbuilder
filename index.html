@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Form Builder v3.0.0</title>
+    </head>
+    <body>
+        <button id="openApp" type="button">Open Form Builder</button>
+        <script>
+            function popup_params(evnt, width, height) {
+                var currentLeft, currentTop;
+                if(evnt.clientX){
+                    currentLeft = evnt.clientX + document.body.scrollLeft;
+                    currenTop = evnt.clientY + document.body.scrollTop;
+                }
+                else {
+                    currentLeft = evnt.pageX;
+                    currentTop = evnt.pageY;
+                }
+                console.log(evnt.clientX + document.body.scrollLeft, evnt.clientY + document.body.scrollTop);
+                return 'width=' + width + ',height=' + height + ',left=' + currentLeft + ',top=' + currentTop + ',scrollbars=1';
+            }
+            var el = document.getElementById('openApp');
+            el.addEventListener('click', function (e) {
+                window.open("app/", "Form Builder v3.0.0", "location=no,toolbar=no,width=1200,height=800,top=100,left=300");
+            });
+        </script>
+    </body>
+</html>
